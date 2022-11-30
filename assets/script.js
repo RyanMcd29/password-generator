@@ -61,20 +61,44 @@ if (confirmOption) {
 } else {
   window.alert("Please select at least one option")
 }
-
 } while (!confirmOption);
 
+// Concatenate arrays into password 
+var passwordCharacters = []
 
+if (passwordLowerCase) {
+  passwordCharacters = passwordCharacters.concat(characters)
+}
 
+if (passwordUpperCase) {
+  passwordCharacters = passwordCharacters.concat(charactersCaps)
+}
 
+if (passwordNumbers) {
+  passwordCharacters = passwordCharacters.concat(numbers)
+}
 
+if (passwordSpecial) {
+  passwordCharacters = passwordCharacters.concat(specialCharacters)
+}
 
+console.log(passwordCharacters)
 
+// Generate password from password character array
 
+var generatedPassword = []
 
+for (let i = 0; i < passwordLength; i++) {
+  var randomNumber = Math.floor(Math.random()*passwordCharacters.length)
+  generatedPassword.splice(i, 0, passwordCharacters[randomNumber])
+}
 
+console.log(generatedPassword)
 
-return;
+password = generatedPassword.join('')
+console.log (password)
+
+return password;
 
 }
 
