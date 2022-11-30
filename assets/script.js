@@ -8,7 +8,8 @@ function generatePassword() {
 // Variable Decleration
 
 var passwordLength = 1;
-var passwordCaps = false;
+var passwordLowerCase = false;
+var passwordUpperCase = false;
 var passwordNumbers = false;
 var passwordSpecial = false;
 
@@ -20,8 +21,8 @@ var specialCharacters = ["!","?", "#", "$", "%", "&", "(", ")", "*", "+", "-", "
 
 // Set and verify password length
 
-passwordLength <=8;
-passwordLength >128;
+//passwordLength <8;
+//passwordLength >128;
 
 
 do {
@@ -38,14 +39,35 @@ do {
 } while (passwordLength <8 || passwordLength >128);
 
 // Set characters to use in password
+window.alert("Please select what characters you would like to use in the generated password")
 
-passwordCaps = window.confirm("Would you like your password to contain capital letters?")
+do {
+
+passwordLowerCase = window.confirm("Would you like your password to contain lowercase letters")
+passwordUpperCase = window.confirm("Would you like your password to contain capital letters?")
 passwordNumbers = window.confirm("Would you like your password to contain numbers?")
 passwordSpecial = window.confirm("Would you like your password to contain special characters?")
 
-console.log("Capitals " + passwordCaps)
+console.log("Lowercase" + passwordLowerCase)
+console.log("Capitals " + passwordUpperCase)
 console.log("Numbers " + passwordNumbers)
 console.log("Special " + passwordSpecial)
+
+// Confirm at least one option is selected  
+var confirmOption = passwordLowerCase || passwordUpperCase || passwordNumbers || passwordSpecial
+
+if (confirmOption) {
+  console.log ("At least one option has been selected")
+} else {
+  window.alert("Please select at least one option")
+}
+
+} while (!confirmOption);
+
+
+
+
+
 
 
 
