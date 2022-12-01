@@ -27,7 +27,9 @@ do {
 
   var checkNumbers = passwordLength <8 || passwordLength >128;
 
-  if (passwordLength == null) {
+  
+// Check for undefined/null not working when deployed on github
+  if (passwordLength == undefined) {
     password = "Program cancelled by user";
     return password;
   } else if (checkNumbers) {
