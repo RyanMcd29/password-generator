@@ -1,13 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-
-
 function generatePassword() {
 
 // Variable Decleration
 
-var passwordLength = 1;
+var passwordLength = " ";
 var passwordLowerCase = false;
 var passwordUpperCase = false;
 var passwordNumbers = false;
@@ -20,33 +17,35 @@ var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var specialCharacters = ["!","?", "#", "$", "%", "&", "(", ")", "*", "+", "-", "<", ">", "=", "?", "@", "[", "]", "^", "_", "{", "}", "~" ];
 
 // Set and verify password length
-
-//passwordLength <8;
-//passwordLength >128;
-
+//passwordLength <8
+//passwordLength >128
 
 do {
   passwordLength = window.prompt ("What length should password be? (Pick between 8 to 128 characters" );
+  
   console.log (passwordLength);
 
-  console.log (passwordLength <8);
-  console.log (passwordLength >128);
-    if (passwordLength <8 || passwordLength >128) {
-      window.alert ("Password is an invalid length, please try again")
-    } else {
-      console.log ("Password length will be "+ passwordLength)
-    }
-} while (passwordLength <8 || passwordLength >128);
+  var checkNumbers = passwordLength <8 || passwordLength >128;
+
+  if (checkNumbers) {
+      window.alert ("Password is an invalid length , please try again")
+  }
+
+} while (checkNumbers);
+
+console.log ("Password length will be "+ passwordLength)
+window.alert("Password length will be "+ passwordLength + " characters.")
+
 
 // Set characters to use in password
 window.alert("Please select what characters you would like to use in the generated password")
 
 do {
 
-passwordLowerCase = window.confirm("Would you like your password to contain lowercase letters")
-passwordUpperCase = window.confirm("Would you like your password to contain capital letters?")
-passwordNumbers = window.confirm("Would you like your password to contain numbers?")
-passwordSpecial = window.confirm("Would you like your password to contain special characters?")
+passwordLowerCase = window.confirm("Click okay if you would like your password to contain lowercase letters.")
+passwordUpperCase = window.confirm("Click okay if you would like your password to contain capital letters.")
+passwordNumbers = window.confirm("Click okay if you would like your password to contain numbers.")
+passwordSpecial = window.confirm("Click okay if you would like your password to contain special characters.")
 
 console.log("Lowercase" + passwordLowerCase)
 console.log("Capitals " + passwordUpperCase)
@@ -101,14 +100,7 @@ console.log (password)
 return password;
 
 }
-
-//
-
-// Concat Arrays
-
-//
  
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
