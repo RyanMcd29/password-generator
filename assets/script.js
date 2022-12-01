@@ -4,7 +4,6 @@ function generatePassword() {
 
 // Variable Decleration
 
-var passwordLength = " ";
 var passwordLowerCase = false;
 var passwordUpperCase = false;
 var passwordNumbers = false;
@@ -22,16 +21,18 @@ var specialCharacters = ["!","?", "#", "$", "%", "&", "(", ")", "?", "@", "[", "
 //passwordLength >128
 
 do {
-  passwordLength = window.prompt ("What length should password be? (Pick between 8 to 128 characters" );
+  var passwordLength = window.prompt ("What length should password be? (Pick between 8 to 128 characters" );
   
   console.log ("User has inputed " + passwordLength + " characters.");
 
   var checkNumbers = passwordLength <8 || passwordLength >128;
 
-  if (checkNumbers) {
+  if (passwordLength == undefined) {
+    password = "Program cancelled by user";
+    return password;
+  } else if (checkNumbers) {
       window.alert ("Password is an invalid length , please try again");
   }
-
 } while (checkNumbers);
 
 console.log ("Password length will be "+ passwordLength);
