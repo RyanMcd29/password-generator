@@ -27,7 +27,7 @@ do {
 
   var checkNumbers = passwordLength <8 || passwordLength >128;
 
-  if (passwordLength == undefined) {
+  if (passwordLength == null) {
     password = "Program cancelled by user";
     return password;
   } else if (checkNumbers) {
