@@ -1,4 +1,4 @@
-#JavaScript: Password Generator
+# JavaScript: Password Generator
 
 ![Screenshot of password generator app on web browser](assets/images/Password-Gen.png)
 
