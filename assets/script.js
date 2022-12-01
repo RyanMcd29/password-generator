@@ -28,12 +28,11 @@ do {
   var checkNumbers = passwordLength <8 || passwordLength >128;
 
   
-// Check for undefined/null not working when deployed on github
   if (passwordLength == undefined) {
     password = "Program cancelled by user";
     return password;
   } else if (checkNumbers) {
-      window.alert ("Password is an invalid length , please try again");
+      window.alert ("Password is an invalid length, please try again");
   }
 } while (checkNumbers);
 
